@@ -1,0 +1,14 @@
+apt-get install -y mysql-server
+
+docker build -t meu-so
+
+docker run -it meu-ubuntu2 meu-so /bin/bash
+
+service mysql start
+
+mysql -h mysql-database - root -p 3307 -psenha123
+
+docker run -it --network minharede-net /bin/bash
+docker run -it --network minharede-net meu-so /bin/bash
+
+show database
